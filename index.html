@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Intégration par Parties — Quand et Comment l'utiliser</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      max-width: 900px;
+      margin: 30px auto;
+      padding: 0 20px;
+      background: #f9f9f9;
+      color: #333;
+      line-height: 1.6;
+    }
+    h1, h2 {
+      color: #2a6ebb;
+    }
+    code {
+      background: #eaeaea;
+      padding: 2px 6px;
+      border-radius: 4px;
+      font-family: Consolas, monospace;
+    }
+    pre {
+      background: #eaeaea;
+      padding: 10px;
+      border-radius: 6px;
+      overflow-x: auto;
+    }
+    section {
+      margin-bottom: 30px;
+      padding: 20px;
+      background: white;
+      box-shadow: 0 0 8px rgba(0,0,0,0.1);
+      border-radius: 8px;
+    }
+    ul {
+      margin-left: 20px;
+    }
+    .formula {
+      font-size: 1.2em;
+      font-weight: bold;
+      background: #d9eaff;
+      padding: 10px;
+      border-radius: 6px;
+      display: inline-block;
+      margin: 10px 0;
+      font-family: 'Georgia', serif;
+    }
+    footer {
+      text-align: center;
+      font-size: 0.9em;
+      color: #777;
+      margin-top: 50px;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Intégration par Parties</h1>
+    <p>Quand et comment utiliser la méthode d’intégration par parties en calcul intégral.</p>
+  </header>
+
+  <section>
+    <h2>Qu’est-ce que l’intégration par parties ?</h2>
+    <p>L’intégration par parties est une technique d’intégration qui permet de calculer des intégrales de produits de fonctions en utilisant la formule dérivée du produit.</p>
+    <div class="formula">
+      \(\displaystyle \int u \, dv = uv - \int v \, du\)
+    </div>
+    <p>Où :</p>
+    <ul>
+      <li><code>u</code> est une fonction choisie à dériver (donne <code>du</code>).</li>
+      <li><code>dv</code> est la partie que l’on intègre (donne <code>v</code>).</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Quand utiliser l’intégration par parties ?</h2>
+    <ul>
+      <li>Lorsque l’intégrale est un produit de deux fonctions (ex : <code>x e^x</code>, <code>ln(x) * x^2</code>).</li>
+      <li>Quand l’intégrale directe est compliquée ou impossible à résoudre facilement.</li>
+      <li>Quand on peut simplifier l’intégrale en dérivant <code>u</code> et en intégrant <code>dv</code>.</li>
+      <li>Pour résoudre des intégrales impliquant des fonctions logarithmiques, exponentielles, trigonométriques combinées.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Comment utiliser la méthode ?</h2>
+    <ol>
+      <li>Identifier <code>u\</code> et <code>dv</code> dans l’intégrale <code>\(\int u \, dv\)</code>.</li>
+      <li>Calculer <code>du = \frac{du}{dx} dx</code> (la dérivée de <code>u</code>).</li>
+      <li>Intégrer <code>dv</code> pour obtenir <code>v\</code>.</li>
+      <li>Appliquer la formule : <code>\(\int u \, dv = uv - \int v \, du\)</code>.</li>
+      <li>Résoudre l’intégrale restante <code>\(\int v \, du\)</code>.</li>
+    </ol>
+  </section>
+
+  <section>
+    <h2>Exemple concret</h2>
+    <p>Calculons l’intégrale suivante :</p>
+    <pre><code>∫ x e^x dx</code></pre>
+    <p>Étapes :</p>
+    <ul>
+      <li>Choisissons <code>u = x</code> (plus simple à dériver) et <code>dv = e^x dx</code>.</li>
+      <li>Alors <code>du = dx</code> et <code>v = e^x</code>.</li>
+      <li>Appliquons la formule :</li>
+    </ul>
+    <pre><code>∫ x e^x dx = x e^x - ∫ e^x dx = x e^x - e^x + C</code></pre>
+    <p>Donc :</p>
+    <p class="formula">\(\int x e^x dx = e^x (x - 1) + C\)</p>
+  </section>
+
+  <footer>
+    <p>© 2025 Parfaitement Pédagogique - Tous droits réservés</p>
+  </footer>
+
+</body>
+</html>
